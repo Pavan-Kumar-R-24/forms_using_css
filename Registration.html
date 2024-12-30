@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background: rgb(201,26,47);
+            background: linear-gradient(90deg, rgba(201,26,47,1) 0%, rgba(148,187,233,1) 100%);
+        }
+        fieldset{
+            width: fit-content ;
+            border: 5px solid white;
+            border-radius: 20px;
+        }   
+        input{
+            border: 2px solid black;
+        }
+        input:optional{
+            border: 2px dashed green;
+        }
+        input[readonly]{
+            background-color: rgb(180, 196, 8);
+            color: black;
+            font-weight: 900px;
+        }
+        select{
+            background-color: rgb(220, 213, 220);
+            border-radius: 10px;
+            font-size: small;
+            width: 100px;
+            color: black;
+            cursor: pointer;
+        }
+        input[type="radio"]:checked{
+            height: 15px;
+            width: 15px;
+        }
+        input[type="radio"]:checked+label{
+            height: 20px;
+            font-size: 15px;
+            color: red;
+        }
+         p{
+            display: none;
+         }
+         input:hover+p{
+            display: inline;
+            color: black;
+            background-color: red;
+            font-weight: 300;
+         }
+         input:focus{
+            background-color: brown;
+            color: black;
+         }  
+         img{
+            display: none;
+         }
+         input[type="Email"]:focus:valid~img.valid{
+            display: inline;
+            height: 15px;
+            width: 15px;
+         }
+         input[type="Email"]:focus:invalid~img.invalid{
+            display: inline;
+            height: 15px;
+            width: 15px;
+         }
+         input[name="age"]:focus:in-range:valid~img.valid{
+            display: inline;
+            height: 18px;
+            width: 18px;
+         }
+         input[name="age"]:focus:out-of-range~img.invalid{
+            display: inline;
+            height: 18px;
+            width: 18px;
+         }
+    </style>
+</head>
+<body>
+    <marquee direction="left"><h1>Course Registration Form</h1></marquee>
+    <form action="">
+    <fieldset>  
+        <legend>Personal Details</legend>
+        <table>
+            <tr>
+                <td><label for="">First Name</label></td>
+                <td><input type="text" name="FN" placeholder="Pavan" required> <p>Enter your Name</p> </td>
+            </tr>
+            <tr>
+                <td><label for="">Last Name</label></td>
+                <td><input type="text" name="LN" placeholder="Kumar" optional> <br></td>
+            </tr>
+            <tr>
+                <td><label for="">Mobile Number</label></td>
+                <td><input type="tel" name="Ph"required> <p>Enter your Mobile Number</p> </td>
+            </tr>
+            <tr>
+                <td><label for="">Email</label></td>
+                <td><input type="email" name="mail" placeholder="pavan@gmail.com" required> <img src="Right.png" class="valid" > <img src="Wrong.png" class="invalid"> </td>
+            </tr>
+            <tr>
+                <td><label for="">Password</label></td>
+                <td><input type="password" name="pass" required> <p>Password Must Contain Minimum of<br> 1 Uppercase <br> 1 Lowercase <br> 1 Special Characters </p> </td>
+            </tr>
+            <tr>
+                <td><label for="">Confirm Password</label></td>
+                <td><input type="password" name="pass" required> <br></td>
+            </tr>
+            <tr>
+                <td><label for="">Date of Birth</label></td>
+                <td><input type="date" name="DOB" required> <br></td>
+            </tr>
+            <tr>
+                <td><label for="">Age</label></td>
+                <td><input type="number" name="age" required min="18" max="100"> <img src="Right.png" class="valid"> <img src="Wrong.png" class="invalid"> </td>
+            </tr>
+            <tr>
+                <td><label for="">Gender</label></td>
+                <td><input type="radio" name="Gender"><label>Male</label>
+                    <input type="radio" name="Gender"><label>Female</label>
+                    <input type="radio" name="Gender"><label>Others</label> <br></td>
+            </tr>
+            <tr>
+                <td><label for="">Select Country</label></td>
+                <td><select>
+                    <option value="">India</option>
+                    <option value="">USA</option>
+                    <option value="">UK</option>
+                    <option value="">China</option>
+                    <option value="">Japan</option>
+                </select><br></td>
+            </tr>
+            <tr>
+                <td><label for="">Upload Image</label></td>
+                <td><input type="file"  name="file" required><br></td>
+            </tr>
+            <tr>
+                <td><input type="reset" name="reset" ></td>
+            </tr>
+        </table>
+    </fieldset>
+    
+    <br>
+    
+    <fieldset>
+        <legend>Course Details</legend>
+       <label for="">Select Course</label>
+                <select>
+                    <option value="J">Java</option>
+                    <option value="P">Python</option>
+                </select> 
+                <br>
+                <label for="">Delivery  Mode</label>
+                <input type="radio" name="mode"><label for="">Online</label> 
+                <input type="radio" name="mode"><label for="">Offline</label> 
+                <br>
+                <label for="">Institute Name</label>
+                <input type="text" value="Tap Academy" readonly>
+                <br>
+                <label for="">Comments:</label> 
+                <br>
+                <textarea cols="60" rows="10"></textarea>
+    </fieldset>
+    
+    <input type="submit" name="" id="">
+    
+    </form>
+    
+    <p>Click on Download Button to know more about me</p>
+    
+    <button> <a href="Pavan Kumar R.pdf" download>Download</a></button>
+</body>
+</html>
+
